@@ -1,10 +1,25 @@
-'use strict';
+const slugify = require('slugify');
+
+module.exports = {
+  lifecycles: {
+    beforeCreate(data) {
+      if(data.title) {
+        data.slug = slugify(data.title)
+      }
+    },
+    beforeUpdate(params, data) {
+      if (data.title) {
+        data.slug = slugify(data.title)
+      }
+    }
+  }
+};
 
 /**
  * Lifecycle callbacks for the `article` model.
  */
 
-module.exports = {
+//module.exports = {
   // Before saving a value.
   // Fired before an `insert` or `update` query.
   // beforeSave: async (model, attrs, options) => {},
@@ -52,4 +67,4 @@ module.exports = {
   // After destroying a value.
   // Fired after a `delete` query.
   // afterDestroy: async (model, attrs, options) => {}
-};
+//};
