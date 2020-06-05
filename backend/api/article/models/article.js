@@ -1,6 +1,7 @@
 const slugify = require('slugify');
 
 module.exports = {
+  /*
   lifecycles: {
     beforeCreate(data) {
       if(data.title) {
@@ -13,6 +14,7 @@ module.exports = {
       }
     }
   }
+  */
 };
 
 /**

@@ -18,7 +18,7 @@
       "type": "richtext",
       "required": true
     },
-    "image": {
+    "coverImage": {
       "model": "file",
       "via": "related",
       "plugin": "upload",
@@ -32,11 +32,22 @@
       "model": "category",
       "via": "articles"
     },
-    "slug": {
-      "type": "string"
-    },
     "excerpt": {
-      "type": "string"
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "author": {
+      "model": "author"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "published",
+        "draft"
+      ]
     }
   }
 }
